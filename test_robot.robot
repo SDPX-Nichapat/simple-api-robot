@@ -14,10 +14,3 @@ GET /plus/0/20.5
 GET /plus/-10/0
     ${response}    GET    http://192.168.253.129:5000/plus/-10/0
     Should Contain    ${response.content.decode('utf-8')}    -10 + 0 = -10
-
-*** Keywords ***
-
-Get On Session
-    [Arguments]    ${url}
-    ${response}    GET    ${url}
-    RETURN    ${response}
